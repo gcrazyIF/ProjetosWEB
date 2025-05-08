@@ -1,0 +1,56 @@
+.cal-sans-regular {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-image: url(imagemFundo.png);
+    background-size: cover;
+    background-position: center;
+}
+
+form{
+   width: 300px;
+   height: 250px;
+   background-color: rgb(4, 128, 20);
+   border-radius: 10px;
+   box-shadow: 2px 2px 5px rgb(0, 0, 0);
+   padding: 30px;
+   font-family: "Cal Sans", sans-serif;
+}
+
+input{
+    border-radius: 20px;
+    padding: 10px;
+    font-family: "Cal Sans", sans-serif;
+}
+
+.login{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.box2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+button{
+    font-family: "Tagesschrift", sans-serif;
+    border-radius: 6px;
+    background-color: rgb(203, 238, 5);
+    border: none;
+    width: 75px;
+    height: 30px;
+}
