@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+    <script>
+        let escolhaUsu = String;
+        function escolhaUsuario(){
+            escolhaUsu = String(prompt("Digite 'pedra', 'papel' ou 'tesoura'. Digite 'pare' para interromper o programa."));
+            if(escolhaUsu == 'pare'){
+                return 'Programa encerrado.';
+            }
+            return "Processando... Clique em OK para continuar.";
+        }
+
+        let respSis = Number;
+        function respostaSistema(){
+            return respSis = (Math.floor(Math.random()*3));
+        }
+
+        function resultado(){
+            /*
+            0 -> pedra;
+            1 -> tesoura;
+            2 -> papel.
+            */
+            if(escolhaUsu == 'papel' && (respSis==0)){
+                return "Escolhemos pedra.\nVitória do usuário!";
+            }
+            else if(escolhaUsu == 'pedra' && (respSis==1)){
+                return "Escolhemos tesoura.\nVitória do usuário!";
+            }
+            else if(escolhaUsu == 'tesoura' && (respSis==2)){
+                return "Escolhemos papel.\nVitória do usuário!";
+            }
+            else if(escolhaUsu == 'tesoura' && (respSis==0)){
+                return "Escolhemos pedra.\nVitória do sistema!";
+            }
+            else if(escolhaUsu == 'papel' && (respSis==1)){
+                return "Escolhemos tesoura.\nVitória do sistema!";
+            }
+            else if(escolhaUsu == 'pedra' && (respSis==2)){
+                return "Escolhemos papel.\nVitória do sistema!";
+            }
+            else{
+                return "Empate!";
+            }
+        }
+
+        do {
+            alert(escolhaUsuario());
+            if(escolhaUsu == 'pare'){
+                break;
+            }
+            respostaSistema();
+            alert(resultado());
+        }
+        while(escolhaUsu != 'pare');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
