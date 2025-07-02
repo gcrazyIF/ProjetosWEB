@@ -1,0 +1,23 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color:rgb(3, 3, 100);
+    color:azure;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color:rgb(116, 16, 16);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgb(0, 0, 0);
+}
+
+input:not([type="checkbox"]):not([type="radio"]){
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid black;
+}
