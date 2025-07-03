@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhação</title>
+</head>
+<script>
+    let palpiteUsu = Number;
+    let numeroAleatorio = Number;
+    let tentativasMax = Number;
+    tentativasMax = 0;
+
+    function sistRandom(){
+        return numeroAleatorio = Math.floor(Math.random()*101);
+    }
+    
+    sistRandom();
+    do {
+        palpiteUsu = Number(prompt("Dê um palpite de um número inteiro entre 1 e 100. Digite 0 para sair."))
+        if(palpiteUsu==0){
+            break;
+        }
+        alert("Validando seu palpite...")
+        if(palpiteUsu==numeroAleatorio){
+            alert("Parabéns, você adivinhou o número: \$numeroAleatorio. Será você o próximo vidente do século?")
+            break;
+        }
+        else if(palpiteUsu>numeroAleatorio){
+            alert("O número é menor que o seu palpite!")
+        }
+        else if(palpiteUsu<numeroAleatorio){
+            alert("O número é maior que o seu palpite!")
+        }
+        tentativasMax++
+    }
+    while(palpiteUsu!=0 && tentativasMax!=5);
+</script>
+<body>
+    
+</body>
+</html>
