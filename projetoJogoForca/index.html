@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Jogo da Forca</title>
+</head>
+<script>
+    let palavras = ['borboleta', 'ácido desoxirribonucleico',]
+    let letraUsu = String;
+    let escolhaProg = Number;
+    let palavraEscolhida = String;
+    let palavraDesconhecida = String;
+
+    do {
+        palavraEscolhida = palavras.at(Math.floor(Math.random() * palavras.length))
+        switch(i){
+            case i==0:
+                break;
+            case i==1:
+                alert("A cabeça do boneco foi posta na corda da forca...")
+                break;
+            case i==2:
+                alert("O tronco do boneco foi posto na corda da forca...\nA cabeça e o tronco estão na forca.")
+                break;
+            case i==3:
+                alert("O braço direito do boneco foi posto na forca...")
+                break;
+            case i==4:
+                alert("O braço esquerdo do boneco foi posto na forca...")
+                break;
+            case i==5:
+                alert("A perna esquerda do boneco foi posta na forca...")
+                break;
+        }
+        letraUsu = prompt("Escolha uma letra!")
+        for (let z = 0; z <= palavraEscolhida.lenght; z++) {
+            if (letraUsu == palavraEscolhida.at(z)) {
+                palavraDesconhecida[palavraEscolhida.length] = '_'
+                palavraDesconhecida.at(z) = letraUsu;
+                alert("Esta letra faz parte da palavra!!\n",palavraDesconhecida)
+            }
+            else{
+                alert("A letra não existe na palavra...")
+                i++
+            }
+        }
+
+        escolhaProg = prompt("Deseja continuar jogando?\n[1] SIM\n[Qualquer outro número] NÃO")
+    }
+    while (escolhaProg != 1)
+</script>
+
+<body>
+
+</body>
+
+</html>
