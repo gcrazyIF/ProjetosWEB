@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,49 +7,62 @@
     <title>Projeto Jogo da Forca</title>
 </head>
 <script>
-    let palavras = ['borboleta', 'ácido desoxirribonucleico',]
+    let palavras = ['borboleta', 'ácido desoxirribonucleico',
+        'programação', 'obliquidade', 'cacofonia',
+        'paralelepípedo', 'ônibus', 'livro', 'cumprimento',
+        'internet', 'apatia', 'cachorro', 'caderno', 'incoveniente',
+        'ódio', 'banana', 'celular', 'travesseiro', 'chocolate',
+        'idiota']
     let letraUsu = String;
     let escolhaProg = Number;
     let palavraEscolhida = String;
     let palavraDesconhecida = String;
+    palavraEscolhida = palavras.at(Math.floor(Math.random() * palavras.length))
+    palavraDesconhecida = Array(palavraEscolhida.length).fill('_');
 
     do {
-        palavraEscolhida = palavras.at(Math.floor(Math.random() * palavras.length))
-        switch(i){
-            case i==0:
-                break;
-            case i==1:
-                alert("A cabeça do boneco foi posta na corda da forca...")
-                break;
-            case i==2:
-                alert("O tronco do boneco foi posto na corda da forca...\nA cabeça e o tronco estão na forca.")
-                break;
-            case i==3:
-                alert("O braço direito do boneco foi posto na forca...")
-                break;
-            case i==4:
-                alert("O braço esquerdo do boneco foi posto na forca...")
-                break;
-            case i==5:
-                alert("A perna esquerda do boneco foi posta na forca...")
-                break;
-        }
-        letraUsu = prompt("Escolha uma letra!")
-        for (let z = 0; z <= palavraEscolhida.lenght; z++) {
-            if (letraUsu == palavraEscolhida.at(z)) {
-                palavraDesconhecida[palavraEscolhida.length] = '_'
-                palavraDesconhecida.at(z) = letraUsu;
-                alert("Esta letra faz parte da palavra!!\n",palavraDesconhecida)
+        for (let i = 0; i < 6; i++) {
+            switch (i) {
+                case 0:
+                    break;
+                case 1:
+                    alert("A cabeça do boneco foi posta na corda da forca...")
+                    break;
+                case 2:
+                    alert("O tronco do boneco foi posto na corda da forca...\nA cabeça e o tronco estão na forca.")
+                    break;
+                case 3:
+                    alert("O braço direito do boneco foi posto na forca...\nA cabeça, o tronco e o braço direito estão na forca.")
+                    break;
+                case 4:
+                    alert("O braço esquerdo do boneco foi posto na forca...\nA cabeça, o tronco e os braços estão na forca.")
+                    break;
+                case 5:
+                    alert("A perna esquerda do boneco foi posta na forca...\nA cabeça, o tronco, os braços e a perna esquerda estão na forca.")
+                    break;
+                case 6:
+                    alert("A perna direita do boneco foi posta na forca...\nO boneco está completo e você perdeu o jogo!")
+                    break;
             }
-            else{
-                alert("A letra não existe na palavra...")
-                i++
-            }
-        }
 
-        escolhaProg = prompt("Deseja continuar jogando?\n[1] SIM\n[Qualquer outro número] NÃO")
+            letraUsu = prompt("Escolha uma letra, de A a Z!\n" + palavraDesconhecida).toLowerCase();
+            for (let z = 0; z <= palavraEscolhida.length; z++) {
+                if (letraUsu == palavraEscolhida.at(z)) {
+                    palavraDesconhecida[z] = letraUsu;
+                    alert("Esta letra faz parte da palavra!!\n" + palavraDesconhecida.join(' '))
+                }
+                else {
+                    alert("A letra não existe na palavra...")
+                }
+            }
+            if (palavraDesconhecida.join(' ') == palavraEscolhida) {
+                alert("Parabéns, você venceu o jogo!")
+                break;
+            }
+        }
+        escolhaProg = prompt("Deseja continuar jogando?\n[1] SIM\n[Qualquer outro número] NÃO");
     }
-    while (escolhaProg != 1)
+    while (escolhaProg == 1)
 </script>
 
 <body>
