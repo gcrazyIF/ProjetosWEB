@@ -19,6 +19,7 @@
     let palavraDesconhecida = String;
     palavraEscolhida = palavras.at(Math.floor(Math.random() * palavras.length))
     palavraDesconhecida = Array(palavraEscolhida.length).fill('_');
+    let acertoUsu = Boolean;
 
     do {
         for (let i = 0; i < 6; i++) {
@@ -45,17 +46,23 @@
                     break;
             }
 
+            acertoUsu = false;
             letraUsu = prompt("Escolha uma letra, de A a Z!\n" + palavraDesconhecida).toLowerCase();
             for (let z = 0; z <= palavraEscolhida.length; z++) {
                 if (letraUsu == palavraEscolhida.at(z)) {
                     palavraDesconhecida[z] = letraUsu;
-                    alert("Esta letra faz parte da palavra!!\n" + palavraDesconhecida.join(' '))
-                }
-                else {
-                    alert("A letra não existe na palavra...")
+                    acertoUsu = true;
+                    palavraDesconhecida.join(' ');
                 }
             }
-            if (palavraDesconhecida.join(' ') == palavraEscolhida) {
+            if (acertoUsu){
+                alert("Esta letra faz parte da palavra!!\n" + palavraDesconhecida.join(' '));
+                i--;
+            }
+            else if(acertoUsu == false){
+                    alert("A letra não existe na palavra...")
+            }
+            if (palavraDesconhecida.join('') == palavraEscolhida) {
                 alert("Parabéns, você venceu o jogo!")
                 break;
             }
