@@ -21,9 +21,13 @@ async function getWeather(city){
 }
 
 function weatherDataRenderizer(cityData){
+    console.log(cityData.location.localtime);
+    const [dataSplit, horaSplit] = cityData.location.localtime.split(" ");
+    [ano, mes, dia] = dataSplit.split("-");
+    const localtimePT = `${dia}/${mes}/${ano} ${horaSplit}`;
     waeResultCard = `
     <h2 id="city-name">${cityData.location.name}, ${cityData.location.country}</h2>
-    <p id="local-time" class="local-time">Horário Local: ${cityData.location.localtime}</p>
+    <p id="local-time" class="local-time">Horário Local: ${localtimePT}</p>
 
     <div class="weather-main">
         <img id="weather-icon" src="${cityData.current.condition.icon}" alt="Ícone do tempo">
